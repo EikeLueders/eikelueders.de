@@ -52,7 +52,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin([{
             from: './src/assets',
-            to: 'assets'
+            to: 'assets',
         }]),
         new MiniCssExtractPlugin({
             filename: "styles.css"

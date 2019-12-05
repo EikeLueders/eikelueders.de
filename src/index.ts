@@ -5,8 +5,14 @@ const run = () => {
     // Set background
     const numOfImages = 8;
     const idx = Math.floor(Math.random() * numOfImages) + 1;
-    const name = './bg' + idx + '-min.jpg';
-    document.getElementsByTagName('body')[0].style.backgroundImage = 'url(assets/' + name + ')';
+    const name = './bg' + idx;
+    document.getElementsByTagName('body')[0].style.backgroundImage = `url(assets/bg/${name}-min.jpg)`;
+
+    const downloadingImage = new Image;
+    downloadingImage.src = `assets/bg/${name}.jpg`;
+    downloadingImage.onload = () => {
+        document.getElementsByTagName('body')[0].style.backgroundImage = `url(${downloadingImage.src})`;
+    };
 
     // Init typed
     new Typed('#typed', {
@@ -20,6 +26,6 @@ const run = () => {
     });
 };
 
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
     run();
-};
+});
