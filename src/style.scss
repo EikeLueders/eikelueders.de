@@ -9,6 +9,24 @@ body {
   background-size: cover;
   background-color: #464646;
 
+  .bg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+
+    &.visible {
+      opacity: 1;
+      transition: opacity 3s linear;
+    }
+  }
+
   .wrapper {
     display: flex;
     flex-direction: column;
