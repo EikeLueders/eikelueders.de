@@ -44,12 +44,12 @@ module.exports = {
         path: path.resolve(__dirname, '../dist'),
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             hash: true,
             template: './src/index.html',
             filename: './index.html' //relative to root of the application
         }),
-        new CleanWebpackPlugin(),
         new CopyWebpackPlugin([{
             from: './src/assets',
             to: 'assets',
